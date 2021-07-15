@@ -7,12 +7,12 @@ use FormRelay\Request\DataDispatcher\RequestDataDispatcher;
 
 class JsonRequestDataDispatcher extends RequestDataDispatcher
 {
-    const DEFAULT_HEADERS = [
-        'Content-Type' => 'application/json',
-        'Accept' => '*/*',
-    ];
-
-    protected $headers = self::DEFAULT_HEADERS;
+    protected function getDefaultHeaders(): array
+    {
+        $headers = parent::getDefaultHeaders();
+        $headers['Content-Type'] = 'application/json';
+        return $headers;
+    }
 
     protected function computeValueArray(array $data): array
     {
