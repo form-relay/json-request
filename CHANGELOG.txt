@@ -1,4 +1,7 @@
 
+1.0.1
+[FEATURE] PHP 8.x support
+
 1.0.0
 
 [TASK] implement code base
